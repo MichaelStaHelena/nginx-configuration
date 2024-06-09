@@ -1,0 +1,8 @@
+{
+    "subdomain": {
+        "template": "server {\n    listen 80;\n    server_name {{ subdomain }}.{{ domain }};\n\n    location / {\n        proxy_pass http://localhost:{{ port }};\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header X-Forwarded-Proto $scheme;\n    }\n\n    location /css/ {\n        alias /var/www/{{ subdomain }}.{{ domain }}/css/;\n    }\n\n    location /scripts/ {\n        alias /var/www/{{ subdomain }}.{{ domain }}/scripts/;\n    }\n\n    error_log /var/log/nginx/{{ subdomain }}.{{ domain }}_error.log;\n    access_log /var/log/nginx/{{ subdomain }}.{{ domain }}_access.log;\n}\n"
+    },
+    "rootdomain": {
+        "template": "server {\n    listen 80;\n    server_name {{ domain }};\n\n    location / {\n        proxy_pass http://localhost:{{ port }};\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header X-Forwarded-Proto $scheme;\n    }\n\n    location /css/ {\n        alias /var/www/{{ domain }}/css/;\n    }\n\n    location /scripts/ {\n        alias /var/www/{{ domain }}/scripts/;\n    }\n\n    error_log /var/log/nginx/{{ domain }}_error.log;\n    access_log /var/log/nginx/{{ domain }}_access.log;\n}\n"
+    }
+}

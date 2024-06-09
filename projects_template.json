@@ -1,0 +1,8 @@
+[
+    {"name": "anicedomain", "domain": "anicedomain.com", "port": 8080},
+    {"name": "subdomain1", "subdomain": "subdomain1", "domain": "subdomain1.yourdomain.com", "port": 8081},
+    {"name": "subdomain2", "subdomain": "subdomain2", "domain": "subdomain2.yourdomain.com", "port": 8082},
+    {"name": "subdomain3", "subdomain": "subdomain3", "domain": "subdomain3.anotherdomain.com", "port": 8083},
+    {"name": "subdomain4", "subdomain": "subdomain4", "domain": "subdomain4.anotherdomain.com", "port": 8084}
+]
+
