@@ -1,8 +1,7 @@
-.PHONY: install lint black mypy flake8 pylint pre-commit
+.PHONY: install lint black mypy flake8 pylint
 
 install:
 	pip install -r requirementsdev.txt
-	pre-commit install
 
 black:
 	black *.py 
@@ -18,7 +17,5 @@ pylint:
 
 isort:
 	isort *.py
-pre-commit:
-	pre-commit run --all-files
 
 lint: black mypy flake8 pylint isort
